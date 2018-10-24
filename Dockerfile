@@ -14,6 +14,6 @@ ARG cluster=kue
 ENV AWS_ACCESS_KEY_ID $aws_access_key_id
 ENV AWS_SECRET_ACCESS_KEY $aws_secret_access_key
 RUN echo $AWS_ACCESS_KEY_ID
-RUN $HOME/bin/aws eks update-kubeconfig --name $cluster --region $region
+#RUN $HOME/bin/aws eks update-kubeconfig --name $cluster --region $region
 ADD sonarqube.yaml /tmp/
 RUN kubectl create -f /tmp/sonarqube.yaml
