@@ -15,4 +15,4 @@ This project deploys a sonarqube instance into a kubernetes cluster.  It creates
 - Output should be "Accessible"
 
 ## Outstanding Items
-- Create image that contains curl, aws cli, aws-iam-authenticator, python, and kubectlS
+- Create image that contains curl, aws cli, aws-iam-authenticator, python, and kubectl.  This might not be necessary given that our jenkins worker has kubectl installed
