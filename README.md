@@ -10,6 +10,7 @@ This project deploys a sonarqube instance into a kubernetes cluster.  It creates
 - kubectl create sonarqube.yaml
 
 ## Validate deployment:
+- Ensure wget is installed (brew install wget on MacOS)
 - [ $(wget $(kubectl get svc/svc-sonarqube | grep svc-sonarqube | awk -F" " '{print $4}'):9000/sonar 2>&1 | grep 'awaiting response' | tail -1 | awk -F" " '{print $6}') == '200' ]  && echo "Accessible" || echo "Inaccessible"
 - Output should be "Accessible"
 
