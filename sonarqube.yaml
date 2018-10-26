@@ -1,17 +1,17 @@
-kind: PersistentVolume
-apiVersion: v1
-metadata:
-  name: pv-postgres
-  labels:
-    type: local
-spec:
-  capacity:
-    storage: 10Gi
-  accessModes:
-    - ReadWriteOnce
-  hostPath:
-    path: /data/postgresql/
----
+#kind: PersistentVolume
+#apiVersion: v1
+#metadata:
+#  name: pv-postgres
+#  labels:
+#    type: local
+#spec:
+#  capacity:
+#    storage: 10Gi
+#  accessModes:
+#    - ReadWriteOnce
+#  hostPath:
+#    path: /data/postgresql/
+#---
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
