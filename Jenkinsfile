@@ -16,7 +16,8 @@ pipeline {
     stage('Deploy SonarQube to AWS') {
         steps {
             sh 'kubectl apply -f sonarqube.yaml'
-            sh 'echo http://$(kubectl get svc/svc-sonarqube | grep svc-sonarqube | awk -F" " ''{print $4}''):9000/sonar'
+            sh 'kubectl get svc/svc-sonarqube'
+            sh 'Append :9000/sonar to external ip from above'
         }
     }
   }
