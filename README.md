@@ -19,4 +19,5 @@ This project deploys a sonarqube instance into a kubernetes cluster.  It creates
  
 ## Outstanding Items
 - pv is commented out right now since we're getting a permission issue in our pipeline. Our k8s config currently allows dynamic pv so this is not an issue as of now 
+- The loadbalancer urls generated for the svc-sonarqube should ideally be stored in a location where it can be consumed by application pipelines
 - Create image that contains curl, aws cli, aws-iam-authenticator, python, and kubectl.  This might not be necessary given that our jenkins worker has kubectl installed
