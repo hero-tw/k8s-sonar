@@ -17,7 +17,7 @@ pipeline {
         steps {
             sh 'kubectl apply -f sonarqube.yaml'
             sh 'kubectl get svc/svc-sonarqube'
-            sh 'Append :9000/sonar to external ip from above'
+            sh 'echo Append :9000/sonar to external ip from above'
         }
     }
   }
