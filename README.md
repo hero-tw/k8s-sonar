@@ -6,7 +6,7 @@ This project deploys a sonarqube instance into a kubernetes cluster.  It creates
 - Region defaults to us-east-1 and cluster to kube.  You can change values in command below
 - docker build --build-arg aws_access_key_id=$aws_access_key_id --build-arg aws_secret_access_key=$aws_secret_access_key --build-arg region=us-east-1 --build-arg cluster=kube .
 
-##kubectl build 
+## kubectl build 
 - kubectl create sonarqube.yaml
 
 ## Validate deployment:
@@ -14,7 +14,7 @@ This project deploys a sonarqube instance into a kubernetes cluster.  It creates
 - [ $(wget $(kubectl get svc/svc-sonarqube | grep svc-sonarqube | awk -F" " '{print $4}'):9000/sonar 2>&1 | grep 'awaiting response' | tail -1 | awk -F" " '{print $6}') == '200' ]  && echo "Accessible" || echo "Inaccessible"
 - Output should be "Accessible"
 
-##Notes
+## Notes
 - Ensure that the default:jenkins account has the proper role bindings: kubectl create rolebinding jenkins-admin-binding --clusterrole=admin --user=jenkins --namespace=default
  
 ## Outstanding Items
